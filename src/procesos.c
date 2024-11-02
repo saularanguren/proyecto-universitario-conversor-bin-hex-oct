@@ -18,7 +18,7 @@ void administrar_procesos()
         printf("\033[%d;%dH",filas_contador++,4);
         printf(": ");
         fgets(informacion_ingresada, sizeof(informacion_ingresada), stdin);
-        eliminar_salto_linea(informacion_ingresada, 100);
+        eliminar_salto_linea(informacion_ingresada, 999);
 
         if(strcmp(informacion_ingresada, "1") == 0)
         {
