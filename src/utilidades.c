@@ -18,7 +18,7 @@ void medidas_minimas()
     if(w.ws_col < 63)
     {
         system("clear");
-        printf("\033[8;16;63t");
+        printf("\033[8;%d;63t",w.ws_row);
         printf("\033[33mSe modificaron las medidas de la terminal\ndisculpe las molestias…");
 		enter_para_continuar();		
 	}
@@ -31,13 +31,13 @@ void imprimir_bienvenida()
 
     system("clear");
     // Centrar elemento
-    printf("\033[%d;%dH",(w.ws_row-1)/2,(w.ws_col-34)/2);
+    printf("\033[%d;%dH",(w.ws_row-3)/2,(w.ws_col-34)/2);
     printf("\033[1;32mBienvenido, software de conversión\n");
     // Centrar elemento
-    printf("\033[%d;%dH",(w.ws_row+1)/2,(w.ws_col-46)/2);
+    printf("\033[%d;%dH",(w.ws_row-1)/2,(w.ws_col-46)/2);
     printf("Convierte texto a hexadecimal, binario y octal\033[0m\n");
     // Posicionar elemento a la derecha
-    printf("\033[%d;%dH",w.ws_row-2,w.ws_col-35);
+    printf("\033[%d;%dH",w.ws_row-3,w.ws_col-35);
     printf("\033[1;37mpresiona Enter para continuar...\033[0m");
     getchar();
 }
