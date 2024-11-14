@@ -1,3 +1,6 @@
 # Ignorar los cambios realizados en los ejecutables
 dev
 bin-hex-oct-converter
+
+# Editor
+.vscode/
