@@ -4,7 +4,7 @@
 int main()
 {
     reproducir_sonido("bienvenida");
-	medidas_minimas();
+    medidas_minimas();
     imprimir_bienvenida();
     imprimir_menu();
     administrar_procesos();
