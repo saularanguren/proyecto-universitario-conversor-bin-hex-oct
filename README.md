@@ -16,7 +16,7 @@ Para compilar y ejecutar el proyecto, sigue estos pasos:
 1. Asegúrate de tener instalado `make` y un compilador compatible (como `gcc`) en tu sistema.
 2. Clona este repositorio en tu máquina local.
 3. Navega al directorio del proyecto.
-4. Ejecuta el siguiente comando para compilar y ejecutar el software:
+4. Ejecuta el siguiente comando para compilar el software:
 
    ```bash
    make
