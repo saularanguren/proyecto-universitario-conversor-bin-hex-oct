@@ -22,7 +22,7 @@ void medidas_minimas()
         printf("\033[8;%d;63t",w.ws_row);
         printf("\033[33mSe modificaron las medidas de la terminal\ndisculpe las molestias…");
         enter_para_continuar();		
-	}
+    }
 }
 
 void imprimir_bienvenida()
