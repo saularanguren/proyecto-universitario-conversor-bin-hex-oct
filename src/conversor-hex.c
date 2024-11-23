@@ -10,17 +10,21 @@ void conversion_hexadecimal()
 
     system("clear");
     imprimir_titulo("\033[1;35mConversor Hexadecimal.", 22);
+
     printf("Ingresar texto:\033[0m ");
     fgets(informacion_ingresada, sizeof(informacion_ingresada), stdin);
     eliminar_salto_linea(informacion_ingresada, 999);
 
     printf("\n\033[1;32mResultado hexadecimal:\033[0;32m\n");
+
     for(int i = 0; informacion_ingresada[i] != '\0'; i++)
     {
+        // transformar carácter a decimal según la tabla ASCII
         unsigned int codigo_ascii = informacion_ingresada[i];
         int ordenar_valores_hexadecimales[2] = {0};
         int indice = 1;
 
+        // transformar decimal a hexadecimal
         while(codigo_ascii > 0)
         {
             ordenar_valores_hexadecimales[indice] = codigo_ascii % 16;
@@ -28,6 +32,7 @@ void conversion_hexadecimal()
             indice--;
         }
 
+        // imprimir representación hexadecimal de ese momento
         for (int j = 0; j < 2; j++)
         {
             switch (ordenar_valores_hexadecimales[j])
@@ -61,7 +66,10 @@ void conversion_hexadecimal()
                     break;
             }
         }
+        
+        // se imprime un espacio, para separar cada representación hexadecimal
         printf(" ");
     }
+
     enter_para_continuar();
 }

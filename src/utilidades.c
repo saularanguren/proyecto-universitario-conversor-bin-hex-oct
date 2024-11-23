@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
+#include <sys/types.h>
 #include "../include/utilidades.h"
 
 void enter_para_continuar()
@@ -79,6 +80,10 @@ void imprimir_tabla()
     enter_para_continuar();
 }
 
+/**
+ * @param titulo Título a Imprimir
+ * @param can_caracteres Número de Caracteres Totales
+ */
 void imprimir_titulo(char *titulo, int can_caracteres)
 {
     struct winsize w;
@@ -92,16 +97,22 @@ void imprimir_titulo(char *titulo, int can_caracteres)
 
     // centrar linea
     printf("\033[%d;%dH",3,(w.ws_col-can_caracteres)/2);
+    
     for(int i = 0; i < can_caracteres; i++)
     {
         printf("═");
     }
+
     printf("\n\n");
 }
 
-int eliminar_salto_linea(char *cadena_ingresada, int almacenamiento)
+/**
+ * @param cadena_ingresada Entrada de Datos
+ * @param can_caracteres Número de Caracteres Totales
+ */
+int eliminar_salto_linea(char *cadena_ingresada, int can_caracteres)
 {
-    for(int i = 0; i < almacenamiento; i++)
+    for(int i = 0; i < can_caracteres; i++)
     {
         if(cadena_ingresada[i] == '\n')
         {
@@ -110,4 +121,22 @@ int eliminar_salto_linea(char *cadena_ingresada, int almacenamiento)
         }
     }
     return 0;
+}
+
+void reproducir_sonido(char *nombre)
+{
+    // Se crea un proceso adicional, con la finalidad de no esperar mucho tiempo, mientras acaba el sonido
+    pid_t pid = fork();
+    
+    char comando[100];
+    // /dev/null 2>&1 = evita que se muestren valores despues de reproducir el sonido
+    snprintf(comando, sizeof(comando), "aplay ./sound/%s.wav > /dev/null 2>&1", nombre);
+    
+    // se creó exitosamente el proceso hijo
+    if (pid == 0) 
+    {
+        system(comando);
+        // finalizar proceso hijo
+        exit(0);
+    }
 }

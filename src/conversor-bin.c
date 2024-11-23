@@ -10,17 +10,21 @@ void conversion_binario()
 
     system("clear");
     imprimir_titulo("\033[1;33mConversor Binario.", 18);
+
     printf("Ingrese texto:\033[0m ");
     fgets(informacion_ingresada, sizeof(informacion_ingresada), stdin);
     eliminar_salto_linea(informacion_ingresada, 999);
 
     printf("\n\033[1;32mResultado Binario:\033[0;32m\n");
+
     for(int i = 0; informacion_ingresada[i] != '\0'; i++)
     {
+        // transformar carácter a decimal según la tabla ASCII
         unsigned int codigo_ascii = informacion_ingresada[i];
         int ordenar_valores_binario[8] = {0};
         int contador = 7;
 
+        // transformar decimal a binario
         while (codigo_ascii > 0)
         {
             ordenar_valores_binario[contador] = codigo_ascii % 2;
@@ -30,9 +34,13 @@ void conversion_binario()
         
         for (int j = 0; j < 8; j++)
         {
+            // imprimir representación binaria de ese momento
             printf("%d",ordenar_valores_binario[j]);
         }
+        
+        // se imprime un espacio, para separar cada representación binaria
         printf(" ");
     }
+
     enter_para_continuar();
 }
