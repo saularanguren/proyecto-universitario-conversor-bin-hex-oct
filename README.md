@@ -1,6 +1,6 @@
-# Proyecto Universitario de Conversión Binario, Hexadecimal y Octal
+# Proyecto Universitario de Conversión de Texto a: Binario, Hexadecimal y Octal
 
-Este proyecto tiene como objetivo desarrollar una herramienta que permita a los usuarios convertir cadenas de caracteres a los sistemas numéricos binario, hexadecimal y octal. La aplicación es útil para estudiantes y profesionales que necesiten realizar conversiones rápidas y precisas, sin embargo, es una herramienta de conversión diseñada exclusivamente para sistemas operativos Linux.
+Este proyecto tiene como objetivo desarrollar una herramienta que permita a los usuarios convertir cadenas de caracteres a los sistemas numéricos binario, hexadecimal y octal. La aplicación transforma cada carácter a su representación decimal según la tabla ASCII; este número decimal se convierte luego a la representación numérica seleccionada. El programa es útil para estudiantes y profesionales que necesiten realizar conversiones rápidas y precisas. Sin embargo, es una herramienta de conversión diseñada exclusivamente para sistemas operativos Linux.
 
 ## Características
 
@@ -23,7 +23,7 @@ Para compilar y ejecutar el proyecto, sigue estos pasos:
    ```
 5. Una vez compilado, puedes ejecutar la aplicación con:
    ```bash
-   ./build/bin-hex-oct-converter
+   ./bin/bin-hex-oct-converter
    ```
 
 ## Uso
