@@ -1,6 +1,6 @@
 # nombre del ejecutable de desarrollo: dev
 # nombre del ejecutable de producción: bin-hex-oct-converter
-TARGET = dev
+TARGET = bin-hex-oct-converter
 
 SRC = src/*.c src/*/*.c
 
